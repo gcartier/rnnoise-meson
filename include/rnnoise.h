@@ -25,12 +25,8 @@
 */
 
 #ifndef RNNOISE_EXPORT
-# if defined(WIN32)
-#  if defined(RNNOISE_BUILD) && defined(DLL_EXPORT)
-#   define RNNOISE_EXPORT __declspec(dllexport)
-#  else
-#   define RNNOISE_EXPORT
-#  endif
+# if defined(_WIN32)
+#  define RNNOISE_EXPORT __declspec(dllexport)
 # elif defined(__GNUC__) && defined(RNNOISE_BUILD)
 #  define RNNOISE_EXPORT __attribute__ ((visibility ("default")))
 # else
